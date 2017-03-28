@@ -11,25 +11,56 @@ package Zoo;
  * @author Lathifah Nurrahmah
  */
 
-/**@class Habitat
- * Menje
+/**Habitat
+ * Kelas yang menangani keberadaan suatu habitat tertentu pada virtual zoo
  */
 public class Habitat {
+    /**char code
+     * kode pembeda kelas habitat
+     */
     private char code;
+    
+    /**String name
+     * nama dari habitat
+     */
     private String name;
+    
+    /**cage
+     * kandang yang ada pada habitat
+     */
     private Cage cage;
+    
+    /**Constructor
+     * konstruktor tanpa parameter yang menyatakan habitat kosong
+     */
     Habitat(){
         name = "";
         code = '0';
+        cage = new Cage();
     }
+    
+    /**Constructor
+     * konstruktor dengan parameter yang menyatakan keberadaan habitat
+     * @param c 
+     * kode dari habitat, bisa memiliki cage dan bisa pula tidak
+     */
     Habitat(char c){
         code = c;
-        if (c=='w' || c=='W'){
-            name = "Water";
-        } else if (c=='l' || c=='L'){
-            name = "Land";
-        } else if (c=='f' || c=='F'){
-            name = "Air";
+        switch (c) {
+            case 'w':
+            case 'W':
+                name = "air";
+                break;
+            case 'l':
+            case 'L':
+                name = "darat";
+                break;
+            case 'f':
+            case 'F':
+                name = "udara";
+                break;
+            default:
+                break;
         }
         if (c=='W' || c=='L' || c=='F'){
             cage = new Cage('l');
@@ -37,15 +68,34 @@ public class Habitat {
             cage = new Cage('0');
         }
     }
+
+    /**SetCage
+     * Menginisiasi cage dengan tipe pembeda dari habitat
+     * @param _code tipe pembeda dari habitat
+     */
     public void SetCage(char _code){
         cage = new Cage(_code);
     }   
+
+    /**GetGCage
+     * mengambil cage yang dituju
+     * @return cage
+     */
     public Cage GetCage(){
         return cage;
     }
+
+    /**GetCode
+     * Mengambil code dari habitat
+     * @return char code
+     */
     public char GetCode(){
         return code;
     }
+
+    /**Render
+     * menampilkan kode yang mewakili habitat
+     */
     public void Render(){
         if (cage.GetCode() == '0'){
             System.out.print(code);
@@ -61,12 +111,14 @@ public class Habitat {
             cage.GetAnimal().Render();
         }
     }
+
+    /**Interact
+     * Melakukan interaksi dengan habitat
+     */
     public void Interact(){
         System.out.print("Habitat ");
         System.out.println(name);
-        if (cage.GetCode() != '0'){
-            cage.Interact();
-        }
+        cage.Interact();
     }
     
 }

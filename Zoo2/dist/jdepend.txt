@@ -1,0 +1,129 @@
+
+--------------------------------------------------
+- Package: Driver
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 3
+
+    A: 0
+    I: 0.75
+    D: 0.25
+
+Abstract Classes:
+
+Concrete Classes:
+    Driver.Driver
+    Driver.Point
+
+Depends Upon:
+    Zoo
+    java.io
+    java.lang
+
+Used By:
+    Main
+
+--------------------------------------------------
+- Package: Main
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 5
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    Main.Zoo2
+
+Depends Upon:
+    Driver
+    Zoo
+    java.io
+    java.lang
+    java.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: Zoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 2
+
+    A: 0
+    I: 0.5
+    D: 0.5
+
+Abstract Classes:
+
+Concrete Classes:
+    Zoo.Animal
+    Zoo.Cage
+    Zoo.Cell
+    Zoo.Facility
+    Zoo.Habitat
+    Zoo.Zoo
+
+Depends Upon:
+    java.io
+    java.lang
+
+Used By:
+    Driver
+    Main
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+Driver,2,0,1,3,0,0.75,0.25,1
+Main,1,0,0,5,0,1,0,1
+Zoo,6,0,2,2,0,0.5,0.5,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,3,0,0,0,1,1
+java.util,0,0,1,0,0,0,1,1
