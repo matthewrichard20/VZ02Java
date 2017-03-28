@@ -5,11 +5,11 @@
         <group>
             <file>file:/D:/Zooventure/Zoo2/test/Zoo/ZooTest.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Driver/Point.java</file>
-            <file>file:/D:/Zooventure/Zoo2/src/Driver/NewMain.java</file>
-            <file>file:/D:/Zooventure/Zoo2/src/Main/Main.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Zoo/Cell.java</file>
+            <file>file:/D:/Zooventure/Zoo2/src/Zoo/Facility.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Zoo/Habitat.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Zoo/Zoo.java</file>
+            <file>file:/D:/Zooventure/Zoo2/src/Main/Zoo2.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Zoo/Animal.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Zoo/Cage.java</file>
             <file>file:/D:/Zooventure/Zoo2/src/Driver/Driver.java</file>

@@ -11,21 +11,28 @@ package Driver;
  * @author Lathifah Nurrahmah
  */
 
-/**@class Point
+/**Point
  * Kelas yang menangani koordinat
  */
 public class Point {
+    /**x
+     * indeks x
+     */
     int x;
+    
+    /**y
+     * indeks y
+     */
     int y;
-    /**@brief Constructor
+    /**Constructor
      * Mengalokasi point tanpa parameter
      */
     public Point(){
        y = 0;
-       x=0;
+       x = 0;
     }
     
-    /**@brief Constructor
+    /**Constructor
      * Mengalokasi point dengan parameter
      * @param _x
      * parameter koordinat x
@@ -37,7 +44,7 @@ public class Point {
         y = _y;
     }
     
-    /**@brief IsSame
+    /**IsSame
      * Mengembalikan nilai kebenaran apakah point yang dimasukkan
      * sama dengan objek atau tidak
      * @param point
@@ -50,7 +57,7 @@ public class Point {
     
     /**
      * @return integer x
-     * @brief GetX
+     * GetX
      * Mengembalikan nilai x
      */
     public int GetX(){
@@ -59,14 +66,14 @@ public class Point {
     
     /**
      * @return  integer y
-     * @brief GetY
+     * GetY
      * Mengembalikan nilai y
      */
     public int GetY(){
         return y;
     }
     
-    /**@brief SetX
+    /**SetX
      * Mengeset nilai x dengan _x
      * @param _x
      * nilai yang akan diset manjadi x
@@ -75,7 +82,7 @@ public class Point {
         x = _x;
     }
     
-    /**@brief SetY
+    /**SetY
      * Mengeset nilai y dengan _y
      * @param _y
      * nilai yang akan diset manjadi y
@@ -85,7 +92,7 @@ public class Point {
     }
     
     /**
-     * @return  * @brief IsMember
+     * @return  * IsMember
      * Mengecek apakah objek merupakan anggota dari 
      * array of point p
      * @param p[]
