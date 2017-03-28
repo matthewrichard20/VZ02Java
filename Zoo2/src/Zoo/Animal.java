@@ -11,17 +11,37 @@ package Zoo;
  * @author Lathifah Nurrahmah
  */
 
-/**@class Animal
+/**Animal
  * Kelas yang menangani hewan-hewan pada zoo
  */
 public class Animal {
+    /**char code
+     * kode pembeda antara animal
+     */
     private char code;
+    
+    /**String name
+     * nama dari animal
+     */
     private String name;
+    
+    /**String type
+     * tipe hewan apakah animal tersebut dalam pembagian kelas vertebrata
+     */
     private String type;
+    
+    /**String sound
+     * suara dari animal
+     */
     private String sound;
+    
+    /**char habitat_type
+     * kode pembeda jenis habitat yang ditempati oleh animal
+     */
     private char habitat_type;
-    /**@brief
-     * 
+    /**Class constructor
+     * konstruktor tanpa parameter yang menyatakan keberadaan animal
+     * hanyalah animal dummy
      */
     public Animal(){
         code = '0';
@@ -30,6 +50,12 @@ public class Animal {
         sound = "";
         habitat_type = '0';
     }
+
+    /**Class constructor
+     * konstruktor dengan parameter char yang menyatakan kode dari hewan
+     * @param _code
+     * kode hewan
+     */
     public Animal(char _code){
         code = _code;
         switch (_code) {
@@ -170,31 +196,31 @@ public class Animal {
         }
     }
 
-    /**
-     *
-     * @return
+    /** GetCode
+     * mengembalikan kode dari hewan
+     * @return char code
      */
     public char GetCode(){
         return code;
     }
 
-    /**
-     *
-     * @return
+    /** GetName
+     * mengembalikan nama dari hewan dalam bentung string
+     * @return String name
      */
     public String GetName(){
         return name;
     }
 
-    /**
-     *
+    /** Render
+     * menampilkan kode dari hewan agar dapat dilihat user
      */
     public void Render(){
         System.out.print(code);
     }
 
-    /**
-     *
+    /** Interact
+     * melakukan interaksi dengan hewan
      */
     public void Interact(){
         System.out.print(name);
