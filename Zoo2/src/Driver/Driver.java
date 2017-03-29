@@ -10,6 +10,7 @@ import Zoo.Zoo;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  *
@@ -107,9 +108,11 @@ public class Driver {
             temp[2] = new Point (user.GetX()+1, user.GetY());
             temp[3] = new Point (user.GetX()-1, user.GetY());
             boolean route_found = false;
-            int j = 0;
+            Random rand = new Random ();
+            int j = rand.nextInt(4);
+            int count = 0;
             int exit = 5;
-            while (j < 4 && !route_found){
+            while (count < 4 && !route_found){
                 if (IsPointRouteAvailable(temp[j], zoo, visited, i)){
                     route_found = true;
                     i++;
@@ -118,11 +121,12 @@ public class Driver {
                 } else if (zoo.GetCell(temp[j].GetY(), temp[j].GetX()).GetFacility().GetCode()=='X'){
                     exit = j;
                 }
-                j++;
+                count ++;
+                j=(j+1)%4;
             }
             if (!route_found){
                 if (exit != 5){
-                    user = temp[j];
+                    user = temp[exit];
                 }
                 available = false;
             }
@@ -143,8 +147,22 @@ public class Driver {
      * @return boolean yang menyatakan rute dapat dilewati
      */
     private boolean IsPointRouteAvailable (Point point, Zoo zoo, Point[] visited, int n){
-        return (point.GetX() >= 0 && point.GetX() < zoo.GetLebar() &&
-                !point.IsMember(visited,n) && zoo.IsRoute(point.GetY(), point.GetX()));
+        return (IsInArea(point, zoo) && !point.IsMember(visited,n) && 
+                zoo.IsRoute(point.GetY(), point.GetX()));
+    }
+    
+    
+    /**IsInArea
+     * mengembalikan kondisi apakah suatu point berada pada area zoo atau tidak
+     * @param point
+     * point yang akan dicek
+     * @param zoo
+     * virtual zoo yang dicek areanya
+     * @return boolean apakah point berada pada area zoo
+     */
+    private boolean IsInArea(Point point, Zoo zoo){
+        return (point.GetX() >= 0 && point.GetX() < zoo.GetLebar() && point.GetY() >= 0 &&
+                point.GetY() < zoo.GetPanjang());
     }
     
     /**ConvertFromFile
